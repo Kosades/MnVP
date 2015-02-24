@@ -1,8 +1,21 @@
 ﻿<Window x:Class="MnVP.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MnVP" Height="350" Width="525">
+        Title="MnVP" Height="428.596" Width="786.579">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Menu HorizontalAlignment="Left" Height="20" Margin="10,10,0,0" VerticalAlignment="Top" Width="759"  BorderBrush="Black" BorderThickness="1">
+            <MenuItem Header="File">
+                <MenuItem Header="Open" HorizontalAlignment="Left" Width="140"/>
+                <MenuItem Header="Exit" HorizontalAlignment="Left" Width="140"/>
+            </MenuItem>
+            <MenuItem Header="View">
+                <MenuItem Header="Settings" HorizontalAlignment="Left" Width="140" Click="MenuItem_Click"/>
+            </MenuItem>
+        </Menu>
+
     </Grid>
 </Window>

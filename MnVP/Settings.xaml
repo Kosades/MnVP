@@ -1,0 +1,26 @@
+﻿<Window x:Class="MnVP.Settings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Background="White"
+        Title="Settings" Height="300" Width="635.789">
+    <Grid Background="White">
+        <Button Content="Apply" HorizontalAlignment="Left" Margin="518,237,0,0" VerticalAlignment="Top" Width="100" Height="22"/>
+        <Button Content="Cancel" HorizontalAlignment="Left" Margin="413,237,0,0" VerticalAlignment="Top" Width="100" Height="22"/>
+        <Button Content="OK" HorizontalAlignment="Left" Margin="308,237,0,0" VerticalAlignment="Top" Width="100" Height="22" Click="Button_Click"/>
+        <TabControl HorizontalAlignment="Left" Height="222" Margin="10,10,0,0" VerticalAlignment="Top" Width="608">
+            <TabItem Header="Appearance">
+                <Grid Background="White">
+                    <ComboBox HorizontalAlignment="Left" Margin="54,14,0,0" VerticalAlignment="Top" Width="120">
+                        <ComboBoxItem Content="White" HorizontalAlignment="Left" Width="118"/>
+                        <ComboBoxItem Content="Black" HorizontalAlignment="Left" Width="118"/>
+                    </ComboBox>
+                    <Label Content="Color" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Audio">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Window>

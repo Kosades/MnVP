@@ -10,6 +10,9 @@ namespace MnVP
         private int freq;
         private BASSInit flags;
 
+        private string fileName;
+        private bool willReplay;
+
         public MusicPlayer(int deviceNumber, int soundFreq, BASSInit playFlags)
         {
             // Construcor
@@ -30,14 +33,14 @@ namespace MnVP
             Bass.BASS_Init(device, freq, flags, IntPtr.Zero);
         }
 
-        public void Play(string fileName, bool replay)
+        public void Play(string filePath, bool replay)
         {
-            /*while ((Bass.BASS_ChannelPlay(Bass.BASS_StreamCreateFile(fileName, 0, 0, BASSFlag.BASS_DEFAULT), replay)) != true)
-            {
-                //Thread.Sleep(200);
-            } */
+            fileName = filePath;
+            willReplay = replay;
+            Thread playThread = new Thread(PlayThread);
+            playThread.Start();
 
-            Bass.BASS_ChannelPlay(Bass.BASS_StreamCreateFile(fileName, 0, 0, BASSFlag.BASS_DEFAULT), replay);
+            //Bass.BASS_ChannelPlay(Bass.BASS_StreamCreateFile(fileName, 0, 0, BASSFlag.BASS_DEFAULT), replay);
         }
 
         public void StopBass()
@@ -48,6 +51,11 @@ namespace MnVP
         private void Registration()
         {
             BassNet.Registration("kosades2014@gmail.com", "2X20243321152222");
+        }
+
+        void PlayThread()
+        {
+            Bass.BASS_ChannelPlay(Bass.BASS_StreamCreateFile(fileName, 0, 0, BASSFlag.BASS_DEFAULT), willReplay);
         }
     }
 }

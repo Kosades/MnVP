@@ -12,8 +12,15 @@ namespace MnVP
             InitializeComponent();
             MusicPlayer player = new MusicPlayer(-1, 44100, 0);
             player.RunBass();
+            
             player.Play("music.mp3", true);
             //player.StopBass();
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            Settings settings_form = new Settings();
+            settings_form.Show();
         }
     }
 }
